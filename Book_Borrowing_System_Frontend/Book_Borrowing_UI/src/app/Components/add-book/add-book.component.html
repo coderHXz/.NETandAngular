@@ -1,0 +1,52 @@
+<h1>Add Book</h1>
+
+<mat-grid-list cols="2" rowHeight="100px" gutterSize="10px" [formGroup]="addBookForm">
+
+  <mat-grid-tile>
+    <mat-form-field appearance="fill" color="accent">
+      <mat-label>Book Name</mat-label>
+      <input matInput formControlName="name" required>
+      <mat-error *ngIf="addBookForm.get('name')?.hasError('required')">Book Name is required</mat-error>
+    </mat-form-field>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <mat-form-field appearance="fill" color="accent">
+      <mat-label>Author Name</mat-label>
+      <input matInput formControlName="author" required>
+      <mat-error *ngIf="addBookForm.get('author')?.hasError('required')">Author Name is required</mat-error>
+    </mat-form-field>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <mat-form-field appearance="fill" color="accent">
+      <mat-label>Book Genre</mat-label>
+      <input matInput formControlName="genre" required>
+      <mat-error *ngIf="addBookForm.get('genre')?.hasError('required')">Book Genre is required</mat-error>
+    </mat-form-field>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <mat-form-field appearance="fill" color="accent">
+      <mat-label>Book Description</mat-label>
+      <input matInput formControlName="description" required>
+      <mat-error *ngIf="addBookForm.get('description')?.hasError('required')">Book Description is required</mat-error>
+    </mat-form-field>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <mat-form-field appearance="fill" color="accent">
+      <mat-label>Book Rating</mat-label>
+      <input matInput formControlName="rating" required>
+      <mat-error *ngIf="addBookForm.get('rating')?.hasError('required')">Rating is required</mat-error>
+      <mat-error *ngIf="addBookForm.get('rating')?.hasError('pattern')">Rating must be a number between 1 to 5</mat-error>
+    </mat-form-field>
+  </mat-grid-tile>
+
+  <mat-grid-tile colspan="2">
+    <button mat-flat-button color="accent" class="create-account-btn" (click)="onSubmit()" [disabled]="addBookForm.invalid">
+      Add Car
+    </button>
+  </mat-grid-tile>
+
+</mat-grid-list>

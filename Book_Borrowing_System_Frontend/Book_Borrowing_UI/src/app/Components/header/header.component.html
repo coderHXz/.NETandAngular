@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button (click)="menuClicked.emit()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <h5>Book Borrowing System</h5>
+    <div class="user-info">
+        <span *ngIf="loginservice.isLoggedIn()">
+            Tokens: {{user?.tokens}} |
+        </span>
+        <span *ngIf="loginservice.isLoggedIn()">
+            Hi,
+            {{loginservice.getName()}}
+        </span>
+        <button mat-icon-button [matMenuTriggerFor]="userMenu">
+            <mat-icon>account_circle</mat-icon>
+        </button>
+        </div>
+        <mat-menu #userMenu="matMenu">
+            <button mat-menu-item *ngIf="!loginservice.isLoggedIn()" routerLink="/login">
+                <mat-icon>login</mat-icon>
+                <span>Login</span>
+            </button>
+            <button mat-menu-item *ngIf="loginservice.isLoggedIn()" (click)="loginservice.logout()" routerLink="/">
+                <mat-icon>logout</mat-icon>
+                <span>Log Out</span>
+            </button>
+        </mat-menu>
+</mat-toolbar>

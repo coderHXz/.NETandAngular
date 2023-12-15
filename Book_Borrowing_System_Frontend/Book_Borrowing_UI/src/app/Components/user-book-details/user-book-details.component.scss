@@ -1,0 +1,19 @@
+:host{
+    display: block;
+    margin: 10px 20px 0 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+mat-card-title {
+    &:hover {
+        color: #0056b3;
+        cursor: pointer; 
+    }
+}
+
+mat-item{
+    display: flex;
+    padding: 10px;
+}

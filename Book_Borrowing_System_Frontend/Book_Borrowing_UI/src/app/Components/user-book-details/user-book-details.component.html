@@ -1,0 +1,20 @@
+<div class="mat-elevation-z4" style="padding: 1rem; margin: 1rem; border-radius: 0.5rem;">
+    <h2>Books Borrowed</h2>
+    <mat-list>
+      <mat-list-item *ngFor="let book of booksBorrowed">
+        <mat-card-title [routerLink]="['/book',book.id]" style="margin-right: 2rem;">{{ book.name }}</mat-card-title>
+        <button mat-mini-fab matTooltip="Primary" color="primary" (click) = "Return(book.id)">
+            <mat-icon>assignment_return</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+</div>
+<div class="mat-elevation-z4" style="padding: 1rem; margin: 1rem; border-radius: 0.5rem;">
+    <h2>Books Lent</h2>
+    <mat-list>
+      <mat-list-item *ngFor="let book of booksLent">
+        <mat-card-title [routerLink]="['/book',book.id]">{{ book.name }}</mat-card-title>
+      </mat-list-item>
+    </mat-list>
+</div>
+  

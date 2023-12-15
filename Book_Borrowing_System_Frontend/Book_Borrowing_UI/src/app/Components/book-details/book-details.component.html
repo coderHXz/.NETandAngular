@@ -1,0 +1,26 @@
+<div class="center-container">
+    <mat-card class="mat-elevation-z4">
+        <mat-card-header>
+            <mat-card-title>
+                <h1>Book Details</h1>
+            </mat-card-title>
+            <span class="spacer"></span>
+        </mat-card-header>
+        <mat-card-content>
+            <h2>Name: {{ book?.name }}</h2>
+            <h2>Author: {{ book?.author }}</h2>
+            <h2>Genre: {{ book?.genre}}</h2>
+            <h2>LentBy: {{book?.lender}}</h2>
+            <h2>Rating: {{book?.rating}}</h2>
+            <h2>Description: {{book?.description}}</h2>
+            <h2>Availability: {{book?.is_Book_Available}}</h2>
+        </mat-card-content>
+
+        <div class="button-container">
+        <button mat-raised-button color="primary" *ngIf="book?.is_Book_Available" (click) = "BorrowBook()" class="create-account-btn">
+            Borrow
+        </button>
+        </div>
+    </mat-card>
+  </div>
+  

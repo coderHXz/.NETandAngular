@@ -1,0 +1,22 @@
+mat-toolbar {
+    justify-content: space-between;
+}
+
+.content {
+    padding: 16px;
+}
+
+.content > mat-card {
+    margin-bottom: 16px;
+}
+
+.spacer{
+    flex: 1;
+}
+
+mat-card-title {
+    &:hover {
+        color: #0056b3;
+        cursor: pointer; 
+    }
+}
